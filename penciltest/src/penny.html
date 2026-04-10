@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny - AI 助手</title>
+    <link rel="stylesheet" href="penny.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Penny 动画形象 -->
+        <div class="penny-container">
+            <div class="penny" id="penny">
+                <!-- 天线 -->
+                <div class="antenna">
+                    <div class="antenna-line"></div>
+                    <div class="antenna-ball"></div>
+                </div>
+
+                <!-- 耳朵 -->
+                <div class="ear left-ear"></div>
+                <div class="ear right-ear"></div>
+
+                <!-- 头部 -->
+                <div class="head">
+                    <!-- 眼睛 -->
+                    <div class="eye left-eye">
+                        <div class="eye-white">
+                            <div class="pupil"></div>
+                            <div class="highlight"></div>
+                        </div>
+                        <div class="eyelid"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="eye-white">
+                            <div class="pupil"></div>
+                            <div class="highlight"></div>
+                        </div>
+                        <div class="eyelid"></div>
+                    </div>
+
+                    <!-- 腮红 -->
+                    <div class="blush left-blush"></div>
+                    <div class="blush right-blush"></div>
+
+                    <!-- 嘴巴 -->
+                    <div class="mouth">
+                        <div class="mouth-smile"></div>
+                    </div>
+                </div>
+
+                <!-- 身体 -->
+                <div class="body">
+                    <div class="heart">❤</div>
+                </div>
+
+                <!-- 手臂 -->
+                <div class="arm left-arm"></div>
+                <div class="arm right-arm"></div>
+
+                <!-- 思考气泡 -->
+                <div class="thinking-bubbles" id="thinkingBubbles">
+                    <div class="bubble bubble-1"></div>
+                    <div class="bubble bubble-2"></div>
+                    <div class="bubble bubble-3"></div>
+                </div>
+            </div>
+
+            <!-- 名字 -->
+            <div class="name">Penny</div>
+
+            <!-- 状态文字 -->
+            <div class="status" id="status">你好！我是 Penny，有什么可以帮你的吗？</div>
+        </div>
+
+        <!-- 对话气泡 -->
+        <div class="chat-bubble" id="chatBubble">
+            <span id="bubbleText">点击开始对话 💬</span>
+        </div>
+
+        <!-- 控制按钮 -->
+        <div class="controls">
+            <button class="btn" onclick="setExpression('normal')">正常</button>
+            <button class="btn" onclick="setExpression('happy')">开心</button>
+            <button class="btn" onclick="setExpression('thinking')">思考</button>
+            <button class="btn" onclick="setExpression('surprised')">惊讶</button>
+            <button class="btn btn-primary" onclick="toggleAnimation()">自动动画</button>
+        </div>
+    </div>
+
+    <script src="penny.js"></script>
+</body>
+
+</html>
