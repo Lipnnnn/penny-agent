@@ -1,0 +1,298 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 2 · strategic-gap — 战略差距
+ * Prefix: .sg-
+ * Theme: bauhaus-bold (sharp, geometric, heavy lines, quick motion)
+ * ───────────────────────────────────────────────────────────────────── */
+
+.sg-scene {
+    color: var(--text);
+}
+
+/* ─── Step 0: 金句 — 战术勤奋 vs 战略懒惰 ─── */
+.sg-quote-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.sg-quote-kicker {
+    display: flex;
+    align-items: center;
+}
+
+.sg-quote-main {
+    font-size: clamp(52px, 5vw, 80px);
+    line-height: 1.2;
+    max-width: 20ch;
+}
+
+.sg-vs-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.sg-vs-label {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+}
+
+.sg-vs-tactic {
+    color: var(--text-mute);
+    border: 2px solid var(--text-faint);
+}
+
+.sg-vs-strategy {
+    color: var(--accent);
+    border: 4px solid var(--accent);
+    font-weight: 700;
+}
+
+.sg-vs-arrow {
+    font-family: var(--font-display-en);
+    font-size: 28px;
+    color: var(--text-faint);
+}
+
+/* ─── Step 1: 行动 — 30分钟空白期 ─── */
+.sg-action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.sg-time-hero {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.sg-time-num {
+    font-size: clamp(120px, 12vw, 200px);
+    line-height: 0.9;
+}
+
+.sg-time-unit {
+    color: var(--text-mute);
+    font-size: 18px;
+}
+
+.sg-neg-list {
+    display: flex;
+    gap: 20px;
+}
+
+.sg-neg-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 28px;
+    animation: sg-neg-in 400ms var(--ease-overshoot) both;
+}
+
+.sg-neg-item:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.sg-neg-item:nth-child(2) {
+    animation-delay: 150ms;
+}
+
+.sg-neg-item:nth-child(3) {
+    animation-delay: 300ms;
+}
+
+@keyframes sg-neg-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sg-neg-mark {
+    font-family: var(--font-display-en);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text-mute);
+}
+
+.sg-neg-text {
+    font-family: var(--font-display-cn);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.sg-neg-positive .sg-neg-text {
+    color: var(--accent);
+}
+
+.sg-action-tag {
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    border: 2px solid var(--accent);
+    padding: 6px 16px;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* ─── Step 2: 转化 — 碎片化→成长 + 注意力对比 ─── */
+.sg-transform {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 56px;
+}
+
+.sg-chain {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+}
+
+.sg-chain-node {
+    padding: 24px 36px;
+    border: 4px solid var(--rule);
+    text-align: center;
+}
+
+.sg-chain-from {
+    border-color: var(--text-faint);
+}
+
+.sg-chain-from .sg-chain-label {
+    color: var(--text-mute);
+}
+
+.sg-chain-to {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.sg-chain-to .sg-chain-label {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.sg-chain-label {
+    font-size: 18px;
+}
+
+.sg-attention {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.sg-att-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.sg-att-label {
+    font-family: var(--font-display-cn);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sg-att-passive .sg-att-label {
+    color: var(--text-mute);
+}
+
+.sg-att-active .sg-att-label {
+    color: var(--accent);
+}
+
+.sg-att-vs {
+    color: var(--text-faint);
+    font-size: 14px;
+}
+
+/* 波浪线动画 — "被推"的不稳定感 */
+.sg-wave-path {
+    animation: sg-wave-dash 1.5s linear infinite;
+}
+
+@keyframes sg-wave-dash {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+/* 实线生长 — "掌控"的稳定感 */
+.sg-solid-line {
+    animation: sg-line-grow 800ms var(--ease-overshoot) both;
+}
+
+@keyframes sg-line-grow {
+    from {
+        stroke-dasharray: 0 300;
+    }
+
+    to {
+        stroke-dasharray: 300 0;
+    }
+}
+
+.sg-hack-state {
+    text-align: center;
+    animation: sg-hack-pop 600ms var(--ease-overshoot) both;
+    animation-delay: 400ms;
+}
+
+@keyframes sg-hack-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ─── Step 3: CTA ─── */
+.sg-cta-scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sg-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.sg-cta-label {
+    color: var(--text-mute);
+}
+
+.sg-cta-main {
+    line-height: 1.1;
+}
+
+.sg-cta-sub {
+    margin-top: 8px;
+}
